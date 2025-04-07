@@ -1,0 +1,1 @@
+# minha-loja-ssr-tss-poc
