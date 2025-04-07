@@ -1,0 +1,73 @@
+# Arquivo .gitignore para Monorepo Node.js/React/Vite com pnpm
+
+# === Dependências ===
+# Ignora a pasta node_modules na raiz e em qualquer subdiretório.
+# O pnpm usa um store central, mas links/shims podem existir.
+# É mais seguro ignorar explicitamente em qualquer nível.
+**/node_modules
+node_modules
+
+# === Logs ===
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# === Arquivos de Sistema Operacional ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# === Pastas de Build/Output ===
+# Ignora pastas de build comuns
+dist
+build
+out
+.vercel
+.output
+coverage
+
+# Ignora especificamente a pasta dist dentro dos pacotes
+packages/*/dist
+
+# === Cache e Arquivos Temporários ===
+.npm
+.yarn-cache
+.pnpm-store
+*.tsbuildinfo
+.eslintcache
+
+# === Arquivos de IDEs ===
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.user
+*.userosscache
+*.sln
+*.tmp
+
+# === Arquivos de Ambiente ===
+# Ignora todos os arquivos .env, exceto os de exemplo
+.env
+.env.*
+!.env.example
+!.env.local.example
+!.env.development.example
+!.env.production.example
+
+# === Vite ===
+# Cache do Vite (geralmente dentro de node_modules, mas por segurança)
+.vite
+
+# === Next.js (caso adicione depois) ===
+.next/
+next-env.d.ts

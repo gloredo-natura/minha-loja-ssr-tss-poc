@@ -1,0 +1,46 @@
+// packages/button/tsconfig.json
+{
+  "compilerOptions": {
+    // --- Configurações Essenciais ---
+    "target": "ES2020", // Ou 'ESNext' - Define a versão JS de saída (afeta checagem)
+    "module": "ESNext", // Como o código será modularizado
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // APIs disponíveis (DOM necessário para React)
+    "jsx": "react-jsx", // Habilita e configura JSX para React 17+
+    "moduleResolution": "bundler", // Modo de resolução moderno, recomendado pelo Vite/TS
+
+    // --- Geração de Declaração (.d.ts) ---
+    // Habilita a intenção de gerar .d.ts (vite-plugin-dts fará o trabalho)
+    "declaration": true,
+    "declarationMap": true, // Gera source maps para os .d.ts (melhora Go to Definition)
+    "sourceMap": true, // Gera source maps para o JS (útil se tsc fosse emitir)
+
+    // --- Qualidade e Rigor ---
+    "strict": true, // Habilita todas as checagens estritas
+    "skipLibCheck": true, // Não checa tipos de libs de terceiros (.d.ts)
+    "allowSyntheticDefaultImports": true, // Permite import default de CJS
+    "forceConsistentCasingInFileNames": true, // Evita erros de case em imports
+    "isolatedModules": true, // Garante que cada arquivo possa ser transpilado separadamente (Vite)
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // --- Saída (Controlada pelo Vite/Plugins) ---
+    // Não emite arquivos JS/JSX via TSC, apenas checa tipos. Vite/Rollup faz o build.
+    "noEmit": true,
+    // 'outDir' é lido por 'vite-plugin-dts' para saber onde colocar os .d.ts
+    "outDir": "dist",
+
+    // --- Estrutura do Projeto ---
+    "baseUrl": ".", // Permite imports absolutos a partir da raiz do pacote (opcional)
+    "paths": { // Alias para imports (opcional)
+      "@/*": ["./src/*"]
+    },
+    "esModuleInterop": true, // Melhora interoperabilidade entre CJS/ESM
+  },
+  // Quais arquivos incluir na checagem/compilação de tipos
+  "include": ["src"],
+  // O que excluir
+  "exclude": ["node_modules", "dist", "vite.config.ts"],
+  // Para monorepos mais complexos, pode referenciar outros pacotes
+  // "references": []
+}

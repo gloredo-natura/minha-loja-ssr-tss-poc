@@ -1,0 +1,51 @@
+{
+  "name": "@meu-monorepo/button",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Componente Button reutilizável",
+  "type": "module",
+  "source": "src/index.ts",
+  "main": "dist/button.umd.cjs",
+  "module": "dist/button.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/button.js",
+      "require": "./dist/button.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@naturacosmeticos/natds-icons": "^1.30.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@naturacosmeticos/natds-themes": "^0.84.1",
+    "tss-react": "^4.9.10"
+  },
+  "devDependencies": {
+    "@naturacosmeticos/natds-icons": "^1.30.1",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.12",
+    "vite-plugin-dts": "^3.9.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

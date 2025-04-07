@@ -1,0 +1,13 @@
+// packages/demo-vite/tsconfig.node.json
+{
+  "compilerOptions": {
+    "composite": true, // Necessário para project references
+    "skipLibCheck": true,
+    "module": "CommonJS", // Ambiente Node usa CommonJS para configs
+    "moduleResolution": "Node", // Resolução de módulo do Node
+    "allowSyntheticDefaultImports": true,
+    "strict": true // Mantém a checagem estrita
+  },
+  // Inclui arquivos TS que rodam em ambiente Node no pacote demo
+  "include": ["vite.config.ts"]
+}

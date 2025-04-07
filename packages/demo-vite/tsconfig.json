@@ -1,0 +1,42 @@
+// packages/demo-vite/tsconfig.json
+{
+  "compilerOptions": {
+    // --- Configurações Essenciais ---
+    "target": "ESNext", // Alvo moderno para navegadores
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // APIs disponíveis
+    "module": "ESNext", // Módulos modernos
+    "moduleResolution": "bundler", // Resolução de módulo recomendada pelo Vite
+    "jsx": "react-jsx", // Suporte a JSX
+
+    // --- Qualidade e Rigor ---
+    "strict": true,
+    "skipLibCheck": true, // Não checar tipos de libs de terceiros
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // --- Integração com Vite/Bundlers ---
+    "isolatedModules": true, // Necessário para transpilação rápida (esbuild/Vite)
+    "resolveJsonModule": true, // Permite importar arquivos .json
+    "useDefineForClassFields": true, // Padrão moderno para campos de classe
+
+    // --- Saída (Controlada pelo Vite) ---
+    // TSC apenas checa tipos, não emite JS.
+    "noEmit": true,
+
+    // --- Estrutura do Projeto ---
+    // Permite imports absolutos a partir da raiz da demo (opcional)
+    "baseUrl": ".",
+    "paths": { // Alias (opcional)
+      "@/*": ["./src/*"]
+    },
+    "esModuleInterop": true, // Melhora interoperabilidade entre CJS/ESM
+  },
+  // Quais arquivos incluir
+  "include": ["src"],
+  // Arquivos de configuração específicos do Node (como vite.config.ts)
+  // são tratados pelo tsconfig.node.json que é referenciado abaixo
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
