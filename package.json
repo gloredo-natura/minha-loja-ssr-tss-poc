@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:mfe": "concurrently \"pnpm --filter demo-next-pages-module-mfe dev\" \"pnpm --filter demo-next-pages-shell-mfe dev\""
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,9 @@
   "packageManager": "pnpm@10.8.0",
   "volta": {
     "node": "20.19.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3"
   }
 }

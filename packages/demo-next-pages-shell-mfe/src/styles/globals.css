@@ -1,0 +1,200 @@
+/* Estilos Globais com Variáveis CSS */
+:root {
+  --code-bg: #e9ecef;
+  --border-color-light: #dee2e6;
+  --border-color-medium: #ced4da;
+  --border-color-dark: #495057;
+  --text-color-primary: #212529;
+  --text-color-secondary: #495057;
+  --text-color-light: #f8f9fa;
+  --bg-color-light: #f8f9fa;
+  --bg-color-white: #ffffff;
+  --bg-color-dark: #212529;
+  --bg-color-darker: #343a40;
+  --link-color: #0d6efd;
+  --disabled-label-color: #6c757d;
+}
+/* Reset básico e fonte padrão */
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 20px 30px; /* Mais padding lateral */
+  background-color: var(--bg-color-light);
+  color: var(--text-color-primary);
+  line-height: 1.6;
+  margin: 0; /* Remove margem padrão do body */
+}
+/* Estilos para Títulos */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--text-color-primary);
+  margin-top: 1.5em; /* Espaçamento padrão acima */
+  margin-bottom: 0.75em; /* Espaçamento padrão abaixo */
+  font-weight: 500;
+}
+h1 {
+  /* Título Principal da Página */
+  border-bottom: 2px solid var(--border-color-light);
+  padding-bottom: 0.5em;
+  margin-top: 0; /* Sem margem no topo */
+  margin-bottom: 1.5em;
+  text-align: center;
+  color: #000;
+  font-size: 2.2em;
+}
+h2 {
+  /* Título da Seção Principal (Button) */
+  border-bottom: 1px solid var(--border-color-light);
+  padding-bottom: 0.5em;
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+  font-size: 1.8em;
+}
+h3.section-subtitle {
+  /* Título das Subseções (Tema Padrão / Overrides) */
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: var(--text-color-secondary);
+  font-size: 1.5em;
+  font-weight: 400;
+}
+h4.variant-title {
+  /* Título da Variante (Contained, Outlined, Text) dentro de um tema */
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: var(--text-color-primary);
+  border-bottom: 1px solid var(--border-color-medium);
+  padding-bottom: 8px;
+  font-size: 1.3em;
+}
+h5.variation-title {
+  /* Título do Grupo de Variação (Cores, Tamanhos, Ícone) */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--text-color-secondary);
+  font-size: 1.1em;
+  font-weight: 500;
+}
+/* Estilo para nomes de variantes/props em código */
+code {
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: #d63384; /* Cor para código */
+}
+
+/* Container Principal */
+#root {
+  max-width: 1400px; /* Aumenta largura máxima */
+  margin: 0 auto; /* Centraliza */
+}
+
+/* Seção de Componente Principal */
+.component-section {
+  background-color: var(--bg-color-white);
+  padding: 30px 40px; /* Mais padding */
+  border-radius: 8px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06); /* Sombra suave */
+}
+
+/* Grupo de Variações de Componente */
+.component-group {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar linha */
+  align-items: center; /* Alinha verticalmente */
+  gap: 12px 15px; /* Espaço vertical e horizontal entre itens */
+  padding: 20px; /* Padding interno */
+  margin-bottom: 25px; /* Espaço abaixo do grupo */
+  border: 1px dashed var(--border-color-medium);
+  border-radius: 6px;
+  background-color: #fdfdff; /* Fundo levemente diferente */
+}
+
+/* Separador visual para estado Disabled */
+.variation-separator {
+  margin: 0 10px; /* Espaçamento horizontal */
+  color: var(--disabled-label-color);
+  font-weight: bold;
+  font-size: 0.9em;
+  align-self: center; /* Alinha com os botões */
+  padding: 5px 0; /* Adiciona padding vertical */
+  border-left: 2px solid var(--border-color-medium); /* Linha vertical */
+  padding-left: 15px; /* Espaço após a linha */
+  height: 2em; /* Altura para alinhar melhor */
+  line-height: 2em; /* Alinha texto verticalmente */
+}
+
+/* Seção Geral de Overrides de Tema */
+.theme-override-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color-light);
+}
+/* Container para cada tema (brand/mode) */
+.theme-override-item {
+  padding: 25px;
+  border: 1px solid var(--border-color-light);
+  border-radius: 8px;
+  margin-bottom: 25px;
+  background-color: var(--bg-color-white);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease; /* Transição suave */
+}
+/* Título do Tema (Brand / Mode) */
+.theme-override-item h4 {
+  margin-top: 0;
+  margin-bottom: 20px; /* Mais espaço abaixo */
+  font-size: 1.2em;
+  color: var(--link-color);
+  border-bottom: none; /* Sem borda */
+  padding-bottom: 0;
+}
+
+/* --- Estilos para Modo Dark --- */
+.dark-mode-background {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-light);
+  border-color: var(--border-color-dark);
+}
+/* Ajusta cores dos títulos dentro do fundo escuro */
+.dark-mode-background h3, /* Não deve ter h3 aqui dentro */
+.dark-mode-background h4,
+.dark-mode-background h5 {
+  color: var(--text-color-light); /* Títulos claros */
+  border-color: var(--border-color-dark); /* Bordas escuras */
+}
+.dark-mode-background h4 {
+  /* Título do Tema */
+  color: #6ea8fe; /* Azul mais claro */
+}
+.dark-mode-background h4 code {
+  /* Código no título da variante */
+  background-color: var(--bg-color-darker);
+  color: #fd7e14; /* Laranja para código */
+}
+.dark-mode-background h5 {
+  /* Título da Variação (Cores, Tamanhos...) */
+  color: #adb5bd; /* Cinza claro */
+}
+/* Ajusta fundo e borda do component-group interno */
+.dark-mode-background .component-group {
+  background-color: var(--bg-color-darker);
+  border-color: var(--border-color-dark);
+}
+/* Ajusta cor do separador */
+.dark-mode-background .variation-separator {
+  color: #6c757d;
+  border-left-color: var(--border-color-dark);
+}
+/* Ajusta cor do código */
+.dark-mode-background code {
+  background-color: #495057;
+  color: #fd7e14;
+}
