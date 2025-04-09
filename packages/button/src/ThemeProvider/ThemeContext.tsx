@@ -1,5 +1,5 @@
 // src/ThemeContext.tsx
-import React, { createContext, useContext } from "react";
+import { createContext, useContext } from "react";
 import { Theme } from "@naturacosmeticos/natds-themes";
 import buildTheme from "./buildTheme"; // Assuming buildTheme is in the same directory or adjust path
 

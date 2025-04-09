@@ -1,9 +1,8 @@
 import { Theme } from "@naturacosmeticos/natds-themes";
 // Importar tipos necessários de buildTheme ou do pacote de temas
-import buildTheme, { Brand, ThemeMode } from "../ThemeProvider/buildTheme";
+import buildTheme, { Brand } from "../ThemeProvider/buildTheme";
 // Importar tipos específicos do Ripple definidos no .props
 import { RippleProps, RippleColors } from "./Ripple.props";
-import { BrandTypes } from "../brandTypes/brandTypes";
 // **CORREÇÃO:** Importação correta do tss
 import { tss } from "../ThemeProvider/tss";
 import { keyframes } from "@emotion/react";
@@ -55,11 +54,6 @@ const getRippleBorderRadius = (
 };
 
 // **CORREÇÃO:** Remove parâmetro 'variant' não existente em RippleProps
-const getBorderWidth = (theme: Theme): number => {
-  // Se houver lógica específica de largura de borda para Ripple, adicione aqui.
-  // Por enquanto, retorna um valor padrão.
-  return 1;
-};
 
 // --- Hook Principal de Estilos ---
 export const useStyles = tss
@@ -67,13 +61,11 @@ export const useStyles = tss
   .create(({ theme, ...params }) => {
     // **CORREÇÃO:** Remove 'mode' da desestruturação
     const {
-      color = "highlight",
       hideOverflow = true,
       disabled = false,
       fullWidth = false,
       showHover = false,
       animationDuration = 300,
-      brand,
       // mode // Removido
     } = params;
 
@@ -81,7 +73,6 @@ export const useStyles = tss
     const finalColor = getRippleColorValue(theme, params);
     const finalBorderRadius = getRippleBorderRadius(theme, params);
     // Passa 'theme' que agora não inclui 'variant'
-    const borderWidth = getBorderWidth(theme); // Não precisa mais de variant
 
     const rippleAnimation = keyframes`
             0% {

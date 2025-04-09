@@ -10,8 +10,6 @@ import {
   ButtonColor,
   ButtonProps,
   ButtonSize,
-  ButtonVariant,
-  IconPosition,
   mode as ButtonMode,
 } from "./Button.props";
 import { BrandTypes } from "../brandTypes/brandTypes";
@@ -214,7 +212,7 @@ const getBorderRadius = (
 };
 
 // **CORREÇÃO:** Define um valor padrão para borderWidth
-const getBorderWidth = (theme: Theme, variant?: ButtonVariant): number => {
+const getBorderWidth = (_theme?: Theme, _variant?: string): number => {
   // Tenta buscar no tema global ou por variante se a estrutura for conhecida e segura
   // Exemplo: return theme.borderWidths?.button ?? 1;
   // Por enquanto, retornaremos um valor padrão, pois o acesso anterior não é seguro pela tipagem.
@@ -236,7 +234,6 @@ export const useStyles = tss
       textTransform = "uppercase",
       showIcon,
       iconPosition = "right",
-      disabled,
     } = params;
 
     // Determina as cores

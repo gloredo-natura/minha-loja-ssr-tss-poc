@@ -61,7 +61,7 @@ export default function HomePage() {
         <title>Next.js Pages - Demo Completa TSS</title>
       </Head>
 
-      <h1>Demonstração Visual - Botões</h1>
+      <h1>Demonstração Visual - Botões - Next.js Pages Router</h1>
 
       <main>
         <section className="component-section">

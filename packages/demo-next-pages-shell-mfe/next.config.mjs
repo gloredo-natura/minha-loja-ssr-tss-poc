@@ -6,7 +6,7 @@ import NextFederationPlugin from '@module-federation/nextjs-mf';
 
 // Define constantes para os remotes
 const REMOTE_APP_NAME = 'demo_next_pages_module_mfe';
-const REMOTE_APP_PORT = 3001;
+const REMOTE_APP_PORT = 3002;
 const REMOTE_APP_URL = `http://localhost:${REMOTE_APP_PORT}`;
 
 // Função para gerar o objeto 'remotes' dinamicamente

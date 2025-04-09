@@ -1,9 +1,7 @@
-import { Theme } from "@naturacosmeticos/natds-themes";
 // Importar tipos necessários de buildTheme ou do pacote de temas
-import buildTheme, { Brand, ThemeMode } from "../ThemeProvider/buildTheme";
+import buildTheme, { Brand } from "../ThemeProvider/buildTheme";
 // Importar tipos específicos do Icon definidos no .props
-import { IconProps, IconSize, IconColor } from "./Icon.props";
-import { BrandTypes } from "../brandTypes/brandTypes";
+import { IconProps, IconSize } from "./Icon.props";
 import { tss } from "../ThemeProvider/tss"; // Importar a instância configurada do tss
 
 // Tipo para os parâmetros que o hook useStyles receberá (baseado em IconProps)

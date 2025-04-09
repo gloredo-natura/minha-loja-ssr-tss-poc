@@ -1,13 +1,10 @@
 // packages/demo-next-pages-module-mfe/next.config.mjs
 import NextFederationPlugin from '@module-federation/nextjs-mf';
 
-const MFE_PORT = 3001; // Porta para este MFE
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  webpack(config, options) {
-    const { isServer } = options;
+  webpack(config) {
     config.plugins.push(
       new NextFederationPlugin({
         // Nome único global para este remote (use underscores)

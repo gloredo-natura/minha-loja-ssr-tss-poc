@@ -52,7 +52,7 @@ export default function HomePage() {
       <Head>
         <title>Shell MFE - Button Remoto (Lazy)</title>
       </Head>
-      <h1>Demonstração Visual - Botões (via MFE com React.lazy)</h1>
+      <h1>Demonstração Visual - Botões - Next.js Pages Router + Module Federation</h1>
       <main>
         <section className="component-section">
           <h2>Botões (Button - Remoto)</h2>

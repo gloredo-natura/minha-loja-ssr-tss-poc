@@ -6,7 +6,6 @@ import { RippleProps } from "./Ripple.props";
 
 // Tipos internos
 type Size = { width: number; height: number };
-type MousePosition = { x: number; y: number };
 
 // Função auxiliar para obter o maior lado (para tamanho do ripple)
 export const getBiggestSide = ({ width, height }: Size): number =>

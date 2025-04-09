@@ -1,7 +1,7 @@
 // src/ThemeProvider.tsx
 import React, { JSX, useMemo } from "react";
 import { Theme } from "@naturacosmeticos/natds-themes";
-import { ThemeContextProvider, useThemeContext } from "./ThemeContext"; // Import from new context file
+import { ThemeContextProvider } from "./ThemeContext"; // Import from new context file
 // Remove JSS imports: import { JssProvider, ThemeProvider as Provider } from "react-jss";
 
 // Props might change slightly - cssPrefix is removed as it's JSS specific

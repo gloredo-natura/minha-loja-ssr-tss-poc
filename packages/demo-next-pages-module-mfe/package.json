@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3001",
+    "dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3002",
     "build": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
-    "start": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next start -p 3001",
+    "start": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next start -p 3002",
     "lint": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=truenext lint"
   },
   "dependencies": {

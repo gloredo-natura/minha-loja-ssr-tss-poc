@@ -1,6 +1,6 @@
 import React from "react";
 // Importa o tipo Color para usar como chave
-import { Color, Theme } from "@naturacosmeticos/natds-themes";
+import { Theme } from "@naturacosmeticos/natds-themes";
 // Mantém IconColor se for um tipo específico, senão pode usar keyof Theme['color']
 import { IconColor } from "../Icon/Icon.props";
 // Importa ButtonStyleParams para usar na criação do objeto de parâmetros

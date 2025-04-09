@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:mfe": "concurrently \"pnpm --filter demo-next-pages-module-mfe dev\" \"pnpm --filter demo-next-pages-shell-mfe dev\""
+    "build": "pnpm --filter @meu-monorepo/button build",
+    "dev:app": "pnpm --filter demo-next-app dev",
+    "dev:pages": "pnpm --filter demo-next-pages dev",
+    "dev:mfe": "concurrently \"pnpm --filter demo-next-pages-module-mfe dev\" \"pnpm --filter demo-next-pages-shell-mfe dev\"",
+    "dev:vite": "pnpm --filter demo-vite dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.8.0",
-  "volta": {
-    "node": "20.19.0"
-  },
   "devDependencies": {
     "concurrently": "^9.1.2",
     "cross-env": "^7.0.3"
