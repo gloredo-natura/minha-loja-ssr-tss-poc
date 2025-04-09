@@ -1,24 +1,25 @@
-// packages/demo-next-final/pages/index.tsx
-import React from 'react';
-import Head from 'next/head';
+// packages/demo-next-app/app/page.tsx
+'use client'; // Marca este componente como Client Component
 
-// --- Imports da SUA biblioteca ---
+import React from 'react';
+// Não importa mais Head de next/head
+
+// --- Imports da SUA biblioteca LOCAL ---
 import {
-  Button,
-  // buildTheme, // Não precisa mais importar aqui, está em _app
+  Button, // Importa o Button diretamente
   BrandTypes,
   ThemeMode,
   ButtonProps,
   ButtonVariant,
   ButtonColor,
   ButtonSize,
-} from "@meu-monorepo/button";
+} from "@meu-monorepo/button-with-directives";
 
 // --- Imports de bibliotecas externas ---
 import themes from "@naturacosmeticos/natds-themes";
-import { IconName } from "@naturacosmeticos/natds-icons";
+import { IconName } from "@naturacosmeticos/natds-icons"; // Importa apenas tipo
 
-// --- Funções Auxiliares e Constantes ---
+// --- Funções Auxiliares e Constantes (Idênticas ao código base) ---
 interface ThemeOption { brand: BrandTypes; mode: ThemeMode; }
 const validBrandTypes = new Set<string>(["aesop", "avon", "avon_v2", "natura", "theBodyShop", "consultoriaDeBeleza", "forcaDeVendas", "natura_v2", "natura_v3", "casaEestilo", "casaEestilo_v2"]);
 const isValidBrandType = (brand: string | BrandTypes): brand is BrandTypes => { return validBrandTypes.has(brand as string); };
@@ -44,7 +45,7 @@ const buttonColors: ButtonColor[] = ["primary", "onPrimary", "secondary", "onSec
 const buttonSizes: ButtonSize[] = ["semi", "semiX", "medium"];
 const buttonTextTransforms: Array<ButtonProps["textTransform"]> = ["uppercase", "lowercase", "capitalize"];
 
-// --- Componente Auxiliar ThemeOverrideDisplay ---
+// --- Componente Auxiliar ThemeOverrideDisplay (Idêntico ao código base) ---
 interface ThemeOverrideProps { themeOption: ThemeOption; children: React.ReactNode; }
 const ThemeOverrideDisplay: React.FC<ThemeOverrideProps> = ({ themeOption, children }) => {
   const containerClasses = `theme-override-item ${themeOption.mode === "dark" ? "dark-mode-background" : ""}`;
@@ -55,19 +56,17 @@ const ThemeOverrideDisplay: React.FC<ThemeOverrideProps> = ({ themeOption, child
 export default function HomePage() {
   const handleButtonClick = (label: string) => { console.log(`Botão "${label}" clicado!`); };
 
+  // O return agora NÃO inclui <Head> nem o fragmento <> vazio desnecessário
   return (
-    <>
-      <Head>
-        <title>Next.js Pages - Demo Completa TSS</title>
-      </Head>
-
-      <h1>Next.js Pages Router</h1>
-
+      // <main> é apropriado para o conteúdo principal da página
       <main>
+        <h1>Next.js App Router + Preserve Directives</h1>
+
         <section className="component-section">
           <h2>Botões (Button)</h2>
           <h3 className="section-subtitle">Variações com Tema Padrão (do Provider)</h3>
           <div className="component-group">
+             {/* Usa o Button importado localmente */}
              <Button onClick={() => handleButtonClick("Provider Primary Contained")} color="primary" variant="contained">Primary Contained</Button>
              <Button onClick={() => handleButtonClick("Provider Secondary Outlined")} color="secondary" variant="outlined">Secondary Outlined</Button>
              <Button onClick={() => handleButtonClick("Provider Text Disabled")} color="primary" variant="text" disabled>Text Disabled</Button>
@@ -113,6 +112,5 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-    </>
   );
 }

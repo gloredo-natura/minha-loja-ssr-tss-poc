@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm --filter @meu-monorepo/button build",
+    "build": " concurrently \"pnpm --filter @meu-monorepo/button build\" \"pnpm --filter @meu-monorepo/button-with-directives build\"",
     "dev:app": "pnpm --filter demo-next-app dev",
     "dev:pages": "pnpm --filter demo-next-pages dev",
     "dev:mfe": "concurrently \"pnpm --filter demo-next-pages-module-mfe dev\" \"pnpm --filter demo-next-pages-shell-mfe dev\"",
