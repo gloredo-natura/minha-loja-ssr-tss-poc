@@ -5,13 +5,11 @@
   "description": "Componente Button reutilizável",
   "type": "module",
   "source": "src/index.ts",
-  "main": "dist/button-with-directives.umd.cjs",
   "module": "dist/button-with-directives.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/button-with-directives.js",
-      "require": "./dist/button-with-directives.umd.cjs",
       "types": "./dist/index.d.ts"
     }
   },
