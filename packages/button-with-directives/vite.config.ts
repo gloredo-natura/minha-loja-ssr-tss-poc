@@ -29,7 +29,6 @@ export default defineConfig({
       external: [...Object.keys(packageJson.peerDependencies)],
       output: {
         preserveModules: true,
-        inlineDynamicImports: false,
         // Mapeia as dependências externalizadas para globais no formato UMD
         globals: {
           react: 'React',
